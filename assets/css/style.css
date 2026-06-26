@@ -17755,3 +17755,17 @@ Rn Slick Dots Style
 }
 
 /*# sourceMappingURL=../maps/style.css.map */
+/* Portfolio "Explore More / Show Less" toggle */
+#portfolio .portfolio-extra {
+    display: none;
+}
+#portfolio.show-all-portfolio .portfolio-extra {
+    display: block;
+}
+#portfolio.show-all-portfolio .portfolio-extra[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+}
+.portfolio-explore-wrapper {
+    width: 100%;
+}

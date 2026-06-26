@@ -340,7 +340,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-02">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -366,7 +366,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="700" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="700" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-13">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -389,7 +389,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-05">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -415,7 +415,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="200" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="200" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-14">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -438,7 +438,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-08">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -461,7 +461,7 @@
                     <!-- End Single Portfolio -->
                     
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-10">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -484,7 +484,7 @@
                     <!-- End Single Portfolio -->
 
                     <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="900" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
+                    <div data-aos="fade-up" data-aos-delay="900" data-aos-once="true" class="portfolio-extra col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
                         <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#portfolio-09">
                             <div class="inner">
                                 <div class="thumbnail">
@@ -505,6 +505,14 @@
                         </div>
                     </div>
                     <!-- End Single Portfolio -->
+
+                    <!-- Explore More / Show Less toggle -->
+                    <div class="col-12 text-center mt--50 portfolio-explore-wrapper">
+                        <a href="javascript:void(0)" id="portfolioToggleBtn" class="rn-btn">
+                            <span>Explore More</span>
+                            <i data-feather="chevron-down"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2546,6 +2554,24 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- main JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Portfolio Explore More / Show Less toggle -->
+    <script type="text/javascript">
+        (function () {
+            var area = document.getElementById('portfolio');
+            var btn = document.getElementById('portfolioToggleBtn');
+            if (!area || !btn) return;
+            btn.addEventListener('click', function () {
+                var expanded = area.classList.toggle('show-all-portfolio');
+                btn.innerHTML = '<span>' + (expanded ? 'Show Less' : 'Explore More') +
+                    '</span><i data-feather="' + (expanded ? 'chevron-up' : 'chevron-down') + '"></i>';
+                if (window.feather) feather.replace();
+                if (!expanded) {
+                    area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        })();
+    </script>
 
     <script type="text/javascript">
         particlesJS('particles-js',
